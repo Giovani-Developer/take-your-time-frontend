@@ -10,11 +10,13 @@ export default function Service() {
   const [servico, setServico] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
+  const [opcaoSelecionada, setOpcaoSelecionada] = useState(0);
 
   useEffect(() => {
     setCarregando(true);
     setErro(null);
     setServico(null);
+    setOpcaoSelecionada(0);
 
     getServicoPorId(id)
       .then(setServico)
@@ -48,7 +50,17 @@ export default function Service() {
         {!carregando && !erro && servico && (
           <div className="detail" style={{ padding: 0 }}>
             <div>
-              <div className="detail-img">Photo placeholder</div>
+              <div className="detail-img">
+                {servico.imagemUrl ? (
+                  <img
+                    src={servico.imagemUrl}
+                    alt={servico.nome}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 18 }}
+                  />
+                ) : (
+                  'Photo coming soon'
+                )}
+              </div>
             </div>
 
             <div>
@@ -57,23 +69,25 @@ export default function Service() {
               <p className="detail-lede">{servico.descricao}</p>
 
               <div className="option-list">
-                <div className="option sel">
-                  <div className="left">
-                    <div className="dur">{servico.duracaoMinutos} minutes</div>
-                    {servico.regiaoCorporal && (
-                      <div className="focus">{servico.regiaoCorporal}</div>
-                    )}
-                  </div>
-                  <div className="price">
-                    {Number(servico.preco) > 0 ? `€${servico.preco}` : '€TBC'}
-                  </div>
-                </div>
+                {servico.opcoes && servico.opcoes.length > 0 ? (
+                  servico.opcoes.map((opcao, index) => (
+                    <div
+                      key={opcao.duracaoMinutos}
+                      className={`option ${index === opcaoSelecionada ? 'sel' : ''}`}
+                      onClick={() => setOpcaoSelecionada(index)}
+                    >
+                      <div className="left">
+                        <div className="dur">{opcao.duracaoMinutos} minutes</div>
+                      </div>
+                      <div className="price">€{opcao.preco}</div>
+                    </div>
+                  ))
+                ) : (
+                  <p style={{ color: 'var(--ink-soft)', fontSize: 13.5 }}>
+                    No duration options available for this treatment yet.
+                  </p>
+                )}
               </div>
-
-              <button className="book-btn">Book this treatment</button>
-              <p className="book-note">
-                You'll choose your preferred date and time on the next step.
-              </p>
             </div>
           </div>
         )}

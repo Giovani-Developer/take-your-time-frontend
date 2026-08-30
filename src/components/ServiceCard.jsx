@@ -1,13 +1,26 @@
 import { Link } from 'react-router-dom';
 
 export default function ServiceCard({ service }) {
+  const precoMinimo =
+    service.opcoes && service.opcoes.length > 0
+      ? Math.min(...service.opcoes.map((o) => Number(o.preco)))
+      : null;
+
   return (
     <Link
       to={`/servico/${service.id}`}
       className="svc-card"
     >
       <div className="svc-thumb">
-        Photo
+        {service.imagemUrl ? (
+          <img
+            src={service.imagemUrl}
+            alt={service.nome}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          'Photo coming soon'
+        )}
       </div>
 
       <div className="svc-body">
@@ -23,8 +36,8 @@ export default function ServiceCard({ service }) {
 
         <div className="svc-foot">
           <span className="svc-price">
-            {service.preco && Number(service.preco) > 0
-              ? `€${service.preco}`
+            {precoMinimo !== null
+              ? `from €${precoMinimo}`
               : 'from €TBC'}
           </span>
 

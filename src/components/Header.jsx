@@ -1,35 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      // Ja estamos na home: nao ha navegacao pra fazer, so rola pro topo.
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Estamos em outra pagina (ex: /servico/3): deixa o Link navegar pra home normalmente.
+      navigate('/');
+    }
+  };
+
   return (
     <nav className="nav">
-      <Link to="/" className="nav-mark">
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 26 26"
-          fill="none"
-          aria-hidden="true"
-        >
-          <circle
-            cx="13"
-            cy="13"
-            r="12"
-            stroke="#B99A5B"
-            strokeWidth="1"
-          />
-
-          <path
-            d="M13 6c2 3-2 3-2 6s4 3 2 6"
-            stroke="#8E6EA6"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-          />
-        </svg>
-
-        <span className="nav-title">
-          Take Your Time
-        </span>
+      <Link to="/" className="nav-mark" onClick={handleLogoClick}>
+        <img
+          src="/logo.png"
+          alt="Take Your Time"
+          className="nav-logo"
+        />
       </Link>
 
       <div className="nav-links">
@@ -37,10 +30,6 @@ export default function Header() {
         <a href="#services">Services</a>
         <a href="#info">Visit Us</a>
       </div>
-
-      <button className="nav-cta">
-        Book a session
-      </button>
     </nav>
   );
 }

@@ -80,7 +80,7 @@ button {
   align-items: center;
   justify-content: space-between;
 
-  padding: 18px 6vw;
+  padding: 12px 6vw;
 
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
@@ -91,7 +91,14 @@ button {
 .nav-mark {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .nav-title {
@@ -118,7 +125,7 @@ button {
 }
 
 .nav-cta {
-  background: var(--navy-deep);
+  background: white;
   color: var(--white);
 
   padding: 10px 22px;
@@ -134,14 +141,17 @@ button {
     transform 0.15s ease;
 }
 
-.nav-cta:hover {
-  background: var(--purple);
-  transform: translateY(-1px);
-}
+
 
 @media (max-width: 760px) {
   .nav-links {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-logo {
+    width: 125px;
   }
 }
 
@@ -239,7 +249,7 @@ button {
   display: flex;
   gap: 14px;
 
-  margin-top: 32px;
+  margin-top: 50px;
 
   flex-wrap: wrap;
 }
@@ -933,4 +943,9 @@ footer p {
   font-size: 12px;
   color: var(--ink-soft);
   text-align: center;
+}
+
+.hero-cta-solo {
+  display: inline-block;
+  margin-top: 28px;
 }

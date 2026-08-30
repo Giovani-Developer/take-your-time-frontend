@@ -54,15 +54,9 @@ export default function Hero() {
           you arrive.
         </p>
 
-        <div className="hero-actions">
-          <button className="btn-primary">
-            Book your session
-          </button>
-
-          <a href="#services" className="btn-ghost">
-            Browse treatments
-          </a>
-        </div>
+        <a href="#services" className="btn-ghost hero-cta-solo">
+          Browse treatments
+        </a>
 
         <div className="hero-strip">
           <div>
