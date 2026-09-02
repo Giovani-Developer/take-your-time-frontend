@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import heroRoom from '../assets/hero-room.jpeg';
 
 export default function Hero() {
@@ -38,27 +39,76 @@ export default function Hero() {
       </svg>
 
       <div className="hero-inner">
-        <span className="eyebrow">
-          Massage Therapy · Dublin
-        </span>
 
-        <h1>
+        <motion.span
+          className="eyebrow"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            ease: 'easeOut',
+          }}
+        >
+          Massage Therapy · Dublin
+        </motion.span>
+
+
+        <motion.h1
+          className="hero-text"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.15,
+            ease: 'easeOut',
+          }}
+        >
           Slow down.
           <em>Take Your Time.</em>
-        </h1>
+        </motion.h1>
 
-        <p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: 'easeOut',
+          }}
+        >
           One treatment room, one session at a time.
           No overlap, no rush — your appointment has
           our full, undivided attention from the moment
           you arrive.
-        </p>
+        </motion.p>
 
-        <a href="#services" className="btn-ghost hero-cta-solo">
+
+        <motion.a
+          href="#services"
+          className="btn-ghost hero-cta-solo"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.45,
+            ease: 'easeOut',
+          }}
+        >
           Browse treatments
-        </a>
+        </motion.a>
 
-        <div className="hero-strip">
+
+        <motion.div
+          className="hero-strip"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.6,
+            ease: 'easeOut',
+          }}
+        >
           <div>
             <span className="num">7 days</span>
             <div className="lbl">
@@ -79,7 +129,8 @@ export default function Hero() {
               Reset between sessions
             </div>
           </div>
-        </div>
+        </motion.div>
+
       </div>
     </header>
   );

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@1,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 :root {
   --navy-deep: #0B1F3A;
   --navy: #142F52;
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Jost', sans-serif;
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -41,11 +41,15 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Fraunces', serif;
-  font-weight: 500;
+  font-family: '';
+  font-weight: 800;
   letter-spacing: -0.01em;
 }
 
+.hero-text {
+  font-family: Mea Culpa;
+  letter-spacing: 0.25rem;
+}
 .accent {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -102,7 +106,7 @@ button {
 }
 
 .nav-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 16px;
   font-weight: 600;
   color: var(--navy-deep);
@@ -112,7 +116,7 @@ button {
   display: flex;
   gap: 28px;
 
-  font-size: 13.5px;
+  font-size: 16.5px;
   color: var(--ink-soft);
 }
 
@@ -225,7 +229,7 @@ button {
   font-family: 'Cormorant Garamond', serif;
 
   font-style: italic;
-  font-weight: 600;
+  font-weight: 800;
 
   display: block;
 
@@ -237,7 +241,8 @@ button {
 .hero p {
   margin-top: 20px;
 
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 100;
   line-height: 1.75;
 
   color: rgba(255, 255, 255, 0.78);
@@ -333,9 +338,11 @@ button {
 }
 
 .hero-strip .num {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
 
-  font-size: 19px;
+  font-weight: 60;
+
+  font-size: 20px;
 
   color: var(--white);
 }
@@ -401,7 +408,7 @@ section {
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 48px;
+  gap: 38px;
 
   align-items: center;
 }
@@ -411,7 +418,7 @@ section {
 
   line-height: 1.8;
 
-  font-size: 15px;
+  font-size: 20px;
 
   margin-bottom: 16px;
 }
@@ -419,7 +426,7 @@ section {
 .about-img {
   aspect-ratio: 4 / 3;
 
-  border-radius: 16px;
+  border-radius: 8px;
 
   background: linear-gradient(
     135deg,
@@ -589,7 +596,7 @@ section {
 }
 
 .svc-price {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
 
   font-size: 15px;
 
@@ -654,7 +661,7 @@ section {
 }
 
 .info-item .n {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
 
   font-style: italic;
 
@@ -708,17 +715,17 @@ footer {
 }
 
 .footer-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
 
   color: var(--navy-deep);
 
-  font-size: 17px;
+  font-size: 20px;
 
   margin-bottom: 10px;
 }
 
 footer p {
-  font-size: 13px;
+  font-size: 15px;
 
   line-height: 1.9;
 }
@@ -748,13 +755,13 @@ footer p {
 .wa-fab {
   position: fixed;
 
-  bottom: 22px;
+  bottom: 100px;
   right: 22px;
 
   z-index: 60;
 
-  width: 56px;
-  height: 56px;
+  width: 66px;
+  height: 66px;
 
   border-radius: 50%;
 
@@ -905,7 +912,7 @@ footer p {
 }
 
 .option .left .dur {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 16px;
   color: var(--navy-deep);
 }
@@ -917,7 +924,7 @@ footer p {
 }
 
 .option .price {
-  font-family: 'Fraunces', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 16px;
   color: var(--navy-deep);
 }
