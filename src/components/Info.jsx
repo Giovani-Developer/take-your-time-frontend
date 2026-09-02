@@ -54,7 +54,7 @@ export default function Info() {
             <Reveal delay={0.15 + index * 0.12}>
 
               <span className="n">
-                {String(index + 1).padStart(2, '0')}
+                
               </span>
 
               <h4>
