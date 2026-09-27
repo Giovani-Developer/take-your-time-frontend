@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
 
             <p>
-              WhatsApp: +353 83 057 7376
+              WhatsApp: +353 89 606 5990
               <br />
               hello@takeyourtime.ie
             </p>
